@@ -61,13 +61,9 @@ public class OrderController {
 
     @PostMapping("/create-order")
     public ResponseEntity<BaseResponse> createOrder(@RequestBody OrderDTO orderDTO) {
-        OrderDTO result = orderService.createOrderDTO(orderDTO);
+        orderService.createOrderDTO(orderDTO);
         BaseResponse baseResponse = new BaseResponse();
-        if (ObjectUtils.isEmpty(result)) {
-            baseResponse.setMessage("Có lỗi xảy ra!");
-            baseResponse.setErrorCode(Constant.ERROR_CODE);
-        }
-        baseResponse.setData(result);
+        baseResponse.setMessage("Đã lưu!");
         return new ResponseEntity<>(baseResponse, HttpStatus.OK);
     }
 }

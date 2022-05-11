@@ -4,5 +4,5 @@ import com.example.orderservice.dto.OrderDTO;
 
 public interface OrderService {
 
-    OrderDTO createOrderDTO(OrderDTO orderDTO);
+    void createOrderDTO(OrderDTO orderDTO);
 }
